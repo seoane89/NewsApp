@@ -58,7 +58,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
             // the bundle. Pass in this activity for the LoaderCallbacks parameter (which is valid
             // because this activity implements the LoaderCallbacks interface).
             loaderManager.initLoader(NEWS_LOADER_ID, null, this);
-            Log.i(LOG_TAG, "Initialized the loader manager");
         } else {
             // Otherwise, display error
             // First, hide loading indicator so error message will be visible
@@ -107,7 +106,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
-        Log.i(LOG_TAG, "Created the loader manager");
         // Create a new loader for the given URL
         return new NewsLoader(this, API_URL);
 
@@ -115,7 +113,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
-        Log.i(LOG_TAG, "LoadFInished on the loader manager");
         // Hide loading indicator because the data has been loaded
         View loadingIndicator = findViewById(R.id.loading_indicator);
         loadingIndicator.setVisibility(View.GONE);
@@ -135,7 +132,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onLoaderReset(Loader<List<News>> loader) {
-        Log.i(LOG_TAG, "RESET the loader manager");
         // Loader reset, so we can clear out our existing data.
         mAdapter.clear();
     }
