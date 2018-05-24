@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_14dp">14dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="list_padding">8dp</dimen>
+</resources>

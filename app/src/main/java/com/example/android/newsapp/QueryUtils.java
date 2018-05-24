@@ -2,6 +2,7 @@ package com.example.android.newsapp;
 
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -163,7 +164,7 @@ public final class QueryUtils {
             // For each news in the newsArray, create an {@link News} object
             for (int i = 0; i < newsArray.length(); i++) {
 
-                // Get a single earthquake at position i within the list of earthquakes
+                // Get a single news article at position i within the list of news
                 JSONObject currentNews = newsArray.getJSONObject(i);
 
                 // Extract the value for the key called "webTitle"
@@ -173,19 +174,21 @@ public final class QueryUtils {
                 String section = currentNews.getString("sectionName");
 
                 // Extract the value for the key called "author"
-                String author = currentNews.getString("author");
+                String author = currentNews.optString("author");
+
 
                 // Extract the value for the key called "webPublicationDate"
-                long date = currentNews.getLong("webPublicationDate");
+                String date = currentNews.getString("webPublicationDate");
                 // Extract the value for the key called "webUrl"
                 String webUrl = currentNews.getString("webUrl");
 
                 // Create a new {@link News} object with the magnitude, location, time,
                 // and url from the JSON response.
-                News newNews = new News(title, section, author, date, webUrl);
+                News jsonNews = new News(title, section, author, date, webUrl);
 
                 // Add the new {@link News} to the list of news.
-                news.add(newNews);
+                news.add(jsonNews);
+                Log.i(LOG_TAG, newsJSON);
             }
 
         } catch (JSONException e) {

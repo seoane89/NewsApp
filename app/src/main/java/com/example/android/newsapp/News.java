@@ -12,20 +12,22 @@ public class News {
     // Author of the Article
     private String mAuthor;
     // Date of publishing
-    private long mTimeInMilliseconds;
+    private String mDate;
     // Web URL
     private String mWebUrl;
 
-    public News(String title, String section, String author, long TimeInMilliseconds, String webUrl){
+    public News(String title, String section, String author, String date, String webUrl){
         mTitle = title;
         mSection = section;
         mAuthor = author;
-        mTimeInMilliseconds = TimeInMilliseconds;
+        mDate = date;
         mWebUrl = webUrl;
     }
+
+
     public String getTitle() {return mTitle;}
     public String getSection() {return mSection;}
     public String getAuthor() {return mAuthor;}
-    public long getTimeInMilliseconds() { return mTimeInMilliseconds;}
+    public String getDate() { return mDate;}
     public String getWebUrl() {return mWebUrl;}
 }
