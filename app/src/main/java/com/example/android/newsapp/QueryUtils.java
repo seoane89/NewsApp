@@ -102,7 +102,7 @@ public final class QueryUtils {
                 Log.e(LOG_TAG, "Error Response Code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem retrieving the earthquake JSON results.", e);
+            Log.e(LOG_TAG, "Problem retrieving the news JSON results.", e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -145,7 +145,7 @@ public final class QueryUtils {
             return null;
         }
 
-        // Create an empty ArrayList that we can start adding earthquakes to
+        // Create an empty ArrayList that we can start adding news to
         List<News> news = new ArrayList<>();
 
         // Try to parse the JSON response string. If there's a problem with the way the JSON
@@ -195,10 +195,10 @@ public final class QueryUtils {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
             // with the message from the exception.
-            Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
+            Log.e("QueryUtils", "Problem parsing the news JSON results", e);
         }
 
-        // Return the list of earthquakes
+        // Return the list of news
         return news;
     }
 

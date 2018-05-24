@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * An {@link NewsAdapter} knows how to create a list item layout for each earthquake
+ * An {@link NewsAdapter} knows how to create a list item layout for each news Article
  * in the data source (a list of {@link News} objects).
  * <p>
  * These list item layouts will be provided to an adapter view like ListView
@@ -66,14 +66,8 @@ public class NewsAdapter extends ArrayAdapter<News> {
         }
 
 
-        // Get the original location string from the Earthquake object,
-        // which can be in the format of "5km N of Cairo, Egypt" or "Pacific-Antarctic Ridge".
+        // Get the original Date string from the News object.
         String originalDateTime = currentNews.getDate();
-
-        // If the original location string (i.e. "5km N of Cairo, Egypt") contains
-        // a primary location (Cairo, Egypt) and a location offset (5km N of that city)
-        // then store the primary location separately from the location offset in 2 Strings,
-        // so they can be displayed in 2 TextViews.
         String primaryDate = "";
         String timeOffset = "";
         String finalTime = "";

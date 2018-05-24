@@ -20,7 +20,7 @@ import java.util.List;
 public class NewsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
     private static final String LOG_TAG = NewsActivity.class.getName();
     /**
-     * Constant value for the earthquake loader ID. We can choose any integer.
+     * Constant value for the news loader ID. We can choose any integer.
      * This really only comes into play if you're using multiple loaders.
      */
     private static final int NEWS_LOADER_ID = 1;
@@ -118,10 +118,10 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         // Set empty state text to display "No news articles found."
         mEmptyStateTextView.setText(R.string.no_news);
 
-        // Clear the adapter of previous earthquake data
+        // Clear the adapter of previous news data
         mAdapter.clear();
 
-        // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
+        // If there is a valid list of {@link News}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
         if (news != null && !news.isEmpty()) {
             mAdapter.addAll(news);
