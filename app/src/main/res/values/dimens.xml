@@ -3,4 +3,6 @@
     <dimen name="margin_14dp">14dp</dimen>
     <dimen name="divider_height">1dp</dimen>
     <dimen name="list_padding">8dp</dimen>
+    <dimen name="padding_48dp">48dp</dimen>
+    <dimen name="image_margin_50dp">50dp</dimen>
 </resources>

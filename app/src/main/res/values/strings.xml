@@ -2,4 +2,8 @@
     <string name="app_name">News App</string>
     <string name="no_news">No News Articles Found.</string>
     <string name="no_internet">No Internet Connection.</string>
+    <string name="whoops">Whoops...</string>
+    <string name="something_went_terrybly_wrong">Something went terribly WRONG!</string>
+    <string name="there_is_no_news_to_display_please_come_back_later">There is no news to display, please come back later</string>
+    <string name="please_connect_to_the_internet_and_come_back">Please connect to the internet and come back!</string>
 </resources>

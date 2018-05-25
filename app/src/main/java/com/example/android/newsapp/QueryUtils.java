@@ -173,16 +173,15 @@ public final class QueryUtils {
                 // Extract the value for the key called "sectionName"
                 String section = currentNews.getString("sectionName");
 
-                // Extract the value for the key called "author"
-                String author = currentNews.optString("author");
-
-
                 // Extract the value for the key called "webPublicationDate"
                 String date = currentNews.getString("webPublicationDate");
                 // Extract the value for the key called "webUrl"
                 String webUrl = currentNews.getString("webUrl");
 
-                // Create a new {@link News} object with the magnitude, location, time,
+               // Extract the value for the key called "author"
+                String author = currentNews.getJSONArray("tags").getJSONObject(0).getString("webTitle");
+
+                // Create a new {@link News} object with the title, section, author, date
                 // and url from the JSON response.
                 News jsonNews = new News(title, section, author, date, webUrl);
 
