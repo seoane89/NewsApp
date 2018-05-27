@@ -4,11 +4,16 @@ import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -26,7 +31,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
      */
     private static final int NEWS_LOADER_ID = 1;
     // URL for the Guardian api
-    private static String API_URL = "https://content.guardianapis.com/search?q=debates&section=politics&show-tags=contributor&api-key=db5c7c44-6b1b-43f3-932c-97bb9d7581f1";
+    private static String API_URL = "https://content.guardianapis.com/search?";
     /**
      * Adapter for the list of news
      */
@@ -47,7 +52,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         whoopsTextView = findViewById(R.id.whoops_text_view);
         wrongTextView = findViewById(R.id.wrong_text_view);
         errorTextView = findViewById(R.id.error_text_view);
-
 
 
         // Find a reference to the {@link ListView} in the layout
@@ -115,12 +119,36 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
     }
 
+
     @Override
+    // onCreateLoader instantiates and returns a new Loader for the given ID
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
-        // Create a new loader for the given URL
-        return new NewsLoader(this, API_URL);
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // getString retrieves a String value from the preferences. The second parameter is the default value for this preference.
+        String sectionSelect  = sharedPrefs.getString(
+                getString(R.string.settings_section_select_value),
+                getString(R.string.settings_section_default_key));
+
+        // parse breaks apart the URI string that's passed into its parameter
+        Uri baseUri = Uri.parse(API_URL);
+
+        // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        // Append query parameter and its value. For example, the `format=geojson`
+        uriBuilder.appendQueryParameter("q", "debates");
+        uriBuilder.appendQueryParameter("show-tags", "contributor");
+        uriBuilder.appendQueryParameter("section", sectionSelect);
+        uriBuilder.appendQueryParameter("api-key", "db5c7c44-6b1b-43f3-932c-97bb9d7581f1");
+
+        // Return the completed uri `http://earthquake.usgs.gov/fdsnws/event/1/query?orderby=time
+        System.out.println(uriBuilder.toString());
+        return new NewsLoader(this, uriBuilder.toString());
 
     }
+
 
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
@@ -150,5 +178,24 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoaderReset(Loader<List<News>> loader) {
         // Loader reset, so we can clear out our existing data.
         mAdapter.clear();
+    }
+
+    @Override
+    // This method initialize the contents of the Activity's options menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    // This method is called whenever an item in the options menu is selected.
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(settingsIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

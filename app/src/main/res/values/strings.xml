@@ -6,4 +6,68 @@
     <string name="something_went_terrybly_wrong">Something went terribly WRONG!</string>
     <string name="there_is_no_news_to_display_please_come_back_later">There is no news to display, please come back later</string>
     <string name="please_connect_to_the_internet_and_come_back">Please connect to the internet and come back!</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+    <string name="settings_news_section_default" translatable="false">politics</string>
+    <string name="settings_news_section_label">News Section</string>
+    <string name="settings_section_name_key">sectionName</string>
+
+    <string name="settings_section_select_label">Select Section</string>
+    <string name="settings_section_select_value" translatable="false">settings_section_value</string>
+    
+    <string name="settings_section_artanddesign_key" translatable="false">artanddesign</string>
+    <string name="settings_section_artanddesign_title">Art And Design</string>
+
+    <string name="settings_section_books_key" translatable="false">books</string>
+    <string name="settings_section_books_title">Books</string>
+
+    <string name="settings_section_business_key" translatable="false">business</string>
+    <string name="settings_section_business_title">Business</string>
+
+    <string name="settings_section_cities_key" translatable="false">cities</string>
+    <string name="settings_section_cities_title">Cities</string>
+
+    <string name="settings_section_community_key" translatable="false">community</string>
+    <string name="settings_section_community_title">Community</string>
+
+    <string name="settings_section_culture_key" translatable="false">culture</string>
+    <string name="settings_section_culture_title">Culture</string>
+
+    <string name="settings_section_education_key" translatable="false">education</string>
+    <string name="settings_section_education_title">Education</string>
+
+    <string name="settings_section_environment_key" translatable="false">environment</string>
+    <string name="settings_section_environment_title">Environment</string>
+
+    <string name="settings_section_fashion_key" translatable="false">fashion</string>
+    <string name="settings_section_fashion_title">Fashion</string>
+
+    <string name="settings_section_film_key" translatable="false">film</string>
+    <string name="settings_section_film_title">Film</string>
+
+    <string name="settings_section_football_key" translatable="false">football</string>
+    <string name="settings_section_football_title">Football</string>
+
+    <string name="settings_section_politics_key" translatable="false">politics</string>
+    <string name="settings_section_politics_title">Politics</string>
+
+    <string name="settings_section_science_key" translatable="false">science</string>
+    <string name="settings_section_science_title">Science</string>
+
+    <string name="settings_section_sport_key" translatable="false">sport</string>
+    <string name="settings_section_sport_title">Sport</string>
+
+    <string name="settings_section_technology_key" translatable="false">technology</string>
+    <string name="settings_section_technology_title">Technology</string>
+
+    <string name="settings_section_travel_key" translatable="false">travel</string>
+    <string name="settings_section_travel_title">Travel</string>
+
+    <string name="settings_section_weather_key" translatable="false">weather</string>
+    <string name="settings_section_weather_title">Weather</string>
+
+    <string name="settings_section_default_key" translatable="false">politics</string>
+    <string name="settings_section_default_title">Politics</string>
+
+
 </resources>

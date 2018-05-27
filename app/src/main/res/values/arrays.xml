@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_section_values">
+        <item>@string/settings_section_artanddesign_key</item>
+        <item>@string/settings_section_books_key</item>
+        <item>@string/settings_section_business_key</item>
+        <item>@string/settings_section_cities_key</item>
+        <item>@string/settings_section_community_key</item>
+        <item>@string/settings_section_culture_key</item>
+        <item>@string/settings_section_education_key</item>
+        <item>@string/settings_section_environment_key</item>
+        <item>@string/settings_section_fashion_key</item>
+        <item>@string/settings_section_film_key</item>
+        <item>@string/settings_section_football_key</item>
+        <item>@string/settings_section_politics_key</item>
+        <item>@string/settings_section_science_key</item>
+        <item>@string/settings_section_sport_key</item>
+        <item>@string/settings_section_technology_key</item>
+        <item>@string/settings_section_travel_key</item>
+        <item>@string/settings_section_weather_key</item>
+    </string-array>
+
+    <string-array name="settings_section_titles">
+        <item>@string/settings_section_artanddesign_title</item>
+        <item>@string/settings_section_books_title</item>
+        <item>@string/settings_section_business_title</item>
+        <item>@string/settings_section_cities_title</item>
+        <item>@string/settings_section_community_title</item>
+        <item>@string/settings_section_culture_title</item>
+        <item>@string/settings_section_education_title</item>
+        <item>@string/settings_section_environment_title</item>
+        <item>@string/settings_section_fashion_title</item>
+        <item>@string/settings_section_film_title</item>
+        <item>@string/settings_section_football_title</item>
+        <item>@string/settings_section_politics_title</item>
+        <item>@string/settings_section_science_title</item>
+        <item>@string/settings_section_sport_title</item>
+        <item>@string/settings_section_technology_title</item>
+        <item>@string/settings_section_travel_title</item>
+        <item>@string/settings_section_weather_title</item>
+    </string-array>
+</resources>
